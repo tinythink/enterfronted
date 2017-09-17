@@ -1,0 +1,66 @@
+/**
+ *----------------
+ * 头部样式
+ *----------------
+ */
+.layout__header {
+    width: 100%;
+    height: 130px;
+}
+.logo-section {
+    display: inline-block;
+    height: 130px;
+    line-height: 130px;
+}
+.logo {
+    position: relative;
+    top:17px;
+}
+
+.tel-section {
+    position: relative;
+    top: 5px;
+    height: 40px;
+}
+.tel-img {
+    position: absolute;
+    right: 0;
+}
+.navbar {
+    height: 90px;
+}
+.navbar-pos {
+    position: relative;
+    /*top: 30px;*/
+    /*bottom: 0;*/
+}
+.navbar li {
+    list-style: none;
+    float: left;
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    text-align: right;
+    margin-left: 20px;
+}
+.navbar li a:hover {
+    color: #4dd0e1;
+    cursor: pointer;
+}
+/**
+ *----------------
+ * 主要内容样式
+ *----------------
+ */
+.layout__content {
+    min-height: 600px;
+}
+
+/**
+ *----------------
+ * 底部样式
+ *----------------
+ */
+.footer {
+
+}

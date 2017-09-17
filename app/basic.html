@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>首页</title>
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Web Application Manifest -->
+    <!--<link rel="manifest" href="manifest.json">-->
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="企业官网">
+    <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="企业官网">
+    <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+
+    <!-- Color the status bar on mobile devices -->
+    <meta name="theme-color" content="#2F3BA2">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/utils.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <style>
+        /* 本例子css */
+        .slideBox {
+            box-sizing: border-box;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #ddd;
+        }
+
+        .slideBox .hd {
+            height: 15px;
+            /*overflow: hidden;*/
+            position: absolute;
+            right: 5px;
+            bottom: 25px;
+            z-index: 1;
+        }
+
+        .slideBox .hd ul {
+            overflow: hidden;
+            zoom: 1;
+            float: left;
+        }
+
+        .slideBox .hd ul li {
+            float: left;
+            margin-right: 2px;
+            width: 15px;
+            height: 15px;
+            line-height: 14px;
+            text-align: center;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .slideBox .hd ul li.on {
+            background: #f00;
+            color: #fff;
+        }
+
+        .slideBox .bd {
+            position: relative;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .slideBox .bd li {
+            zoom: 1;
+            vertical-align: middle;
+        }
+
+        .slideBox .bd img {
+            width: 100%;
+            height: 500px;
+            display: block;
+        }
+
+        /*.bd ul {*/
+            /*margin: 0;*/
+            /*padding: 0;*/
+            /*list-style: none;*/
+        /*}*/
+
+        /* 下面是前/后按钮代码，如果不需要删除即可 */
+        .slideBox .prev,
+        .slideBox .next {
+            position: absolute;
+            left: 3%;
+            top: 50%;
+            margin-top: -25px;
+            display: block;
+            width: 32px;
+            height: 40px;
+            background: url(images/slider-arrow.png) -110px 5px no-repeat;
+            filter: alpha(opacity=50);
+            opacity: 0.5;
+        }
+
+        .slideBox .next {
+            left: auto;
+            right: 3%;
+            background-position: 8px 5px;
+        }
+
+        .slideBox .prev:hover,
+        .slideBox .next:hover {
+            filter: alpha(opacity=100);
+            opacity: 1;
+        }
+
+        .slideBox .prevStop {
+            display: none;
+        }
+
+        .slideBox .nextStop {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<!-- Add your site or app content here -->
+<div class="main-layout">
+    <header class="layout__header">
+        <div class="container clear-float">
+            <section class="pull-left">
+                <span class="logo-section">
+                    <img src="images/logo.jpg" alt="" class="logo">
+                </span>
+            </section>
+            <section class="pull-right">
+                <div class="tel-section">
+                    <img src="images/tel.jpg" alt="" class="tel-img">
+                </div>
+                <div class="" style="position: relative;">
+                    <ul class="navbar navbar-pos">
+                        <li><a>首页</a></li>
+                        <li><a>服务宗旨</a></li>
+                        <li><a>公司动态</a></li>
+                        <li><a>产品展示</a></li>
+                        <li><a>合作案例</a></li>
+                        <li><a>合作招商</a></li>
+                        <li><a>联系我们</a></li>
+                    </ul>
+                </div>
+
+            </section>
+        </div>
+
+    </header>
+    <article class="layout__content">
+        <div id="slideBox" class="slideBox">
+            <div class="hd">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </div>
+            <div class="bd">
+                <ul>
+                    <li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic1.jpg"/></a></li>
+                    <li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic2.jpg"/></a></li>
+                    <li><a href="http://www.SuperSlide2.com" target="_blank"><img src="images/pic3.jpg"/></a></li>
+                </ul>
+            </div>
+
+            <!-- 下面是前/后按钮代码，如果不需要删除即可 -->
+            <a class="prev" href="javascript:void(0)"></a>
+            <a class="next" href="javascript:void(0)"></a>
+
+        </div>
+        <section class="container">
+            <h3>主要内容</h3>
+        </section>
+        <footer class="footer">
+            <h3>底部菜单</h3>
+        </footer>
+    </article>
+
+</div>
+
+<script src="scripts/jquery/jquery.min.js"></script>
+<script src="scripts/superSlide/jquery.SuperSlide.2.1.1.js"></script>
+<!-- build:js scripts/main.min.js -->
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
+
+
+<!-- Built with love using Web Starter Kit -->
+</body>
+</html>
